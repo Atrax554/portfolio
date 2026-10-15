@@ -14,7 +14,7 @@
 [data-fx="right"]{opacity:0;transform:translateX(44px)}
 [data-fx="scale"]{opacity:0;transform:scale(.92)}
 [data-fx="wipe"]{clip-path:inset(0 100% 0 0)}
-[data-fx].fx-in{opacity:1;transform:none;clip-path:inset(0 0 0 0)}
+[data-fx].fx-in{opacity:1;transform:none;clip-path:inset(-12px -12px -12px -12px)}
 .fx-zoom{overflow:hidden}
 .fx-zoom img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
 .fx-zoom:hover img{transform:scale(1.07)}

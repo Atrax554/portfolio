@@ -1,4 +1,11 @@
 /* anim.js – shared motion layer, no libraries (perf: rAF-throttled, cached rects, no cursor effects) */
+/* FXR: fail-safe reveal registry – IO (threshold 0) + rect poll every 250ms, so content ALWAYS shows */
+window.FXR=window.FXR||(()=>{const P=new Map();let tm=0;
+ const run=()=>{tm=0;const H=innerHeight;P.forEach((cb,el)=>{const r=el.getBoundingClientRect();if(r.bottom>-50&&r.top<H*.98){P.delete(el);cb(el)}});if(P.size)tm=setTimeout(run,250)};
+ const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const cb=P.get(e.target);io.unobserve(e.target);if(cb){P.delete(e.target);cb(e.target)}}}),{rootMargin:'0px 0px -4% 0px',threshold:0}):null;
+ return{add(el,f){const o=P.get(el),cb=o?x=>{o(x);try{f(x)}catch(e){}}:x=>{try{f(x)}catch(e){}};P.set(el,cb);io&&io.observe(el);if(!tm)tm=setTimeout(run,250)},all(){P.forEach((cb,el)=>{try{cb(el)}catch(e){}});P.clear()}}})();
+/* legacy .reveal sections (main.js) – same fail-safe */
+document.querySelectorAll('.reveal:not(.is-in)').forEach(el=>FXR.add(el,e=>e.classList.add('is-in')));
 (()=>{const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const fine=matchMedia('(hover: hover) and (pointer: fine)').matches;const d=document;
 const bg=d.createElement('div');bg.className='fx-bg';bg.setAttribute('aria-hidden','true');
@@ -11,17 +18,16 @@ const low=()=>window.FX&&window.FX.low;
 const h1=d.querySelector('h1');if(h1&&!h1.querySelector('*')){const t=h1.textContent.trim();h1.setAttribute('aria-label',t);h1.textContent='';
  t.split(/\s+/).forEach((w,i)=>{const s=d.createElement('span');s.className='fx-w';s.setAttribute('aria-hidden','true');s.style.setProperty('--i',i);s.textContent=w;h1.append(s,' ')})}
 const kinds=['up','left','scale','right','wipe'];let k=0;
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('fx-in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px',threshold:.08});
 d.querySelectorAll('main section, section').forEach((sec,si)=>{if(si===0&&sec.querySelector('h1'))return;
  const kids=[...sec.querySelectorAll(':scope h2, :scope article, :scope li, :scope figure, :scope blockquote, :scope .card, :scope p')].filter(el=>!el.closest('[data-fx]')&&!el.closest('nav')&&!el.closest('form')).slice(0,24);
  const kind=kinds[k++%kinds.length];kids.forEach((el,i)=>{const r=el.getBoundingClientRect();if(r.top<innerHeight)return;
-  el.dataset.fx=el.tagName==='H2'?'wipe':(kind==='wipe'?'up':kind);el.style.setProperty('--fxd',(i%6)*70+'ms');io.observe(el)})});
-const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);const el=e.target,m=el.dataset.fxn.match(/^(\D*)(\d+(?:[.,]\d+)?)(.*)$/);
+  el.dataset.fx=el.tagName==='H2'?'wipe':(kind==='wipe'?'up':kind);el.style.setProperty('--fxd',(i%6)*70+'ms');FXR.add(el,x=>x.classList.add('fx-in'))})});
+const cioRun=el=>{const m=el.dataset.fxn.match(/^(\D*)(\d+(?:[.,]\d+)?)(.*)$/);
  const end=parseFloat(m[2].replace(',','.')),dec=(m[2].split(/[.,]/)[1]||'').length,sep=m[2].includes(',')?',':'.';const t0=performance.now();
- const step=n=>{const p=Math.min(1,(n-t0)/1400),v=end*(1-Math.pow(1-p,3));el.textContent=m[1]+v.toFixed(dec).replace('.',sep)+m[3];if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)}),{threshold:.6});
+ const step=n=>{const p=Math.min(1,(n-t0)/1400),v=end*(1-Math.pow(1-p,3));el.textContent=m[1]+v.toFixed(dec).replace('.',sep)+m[3];if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)};
 d.querySelectorAll('main *, section *').forEach(el=>{if(el.children.length)return;const t=el.textContent.trim();
  if(/^\D{0,2}\d{1,4}(?:[.,]\d)?\s?(\+|%|★|\/\d+|h|min)?$/.test(t)&&!el.closest('a,button,label,time,nav,form,footer')&&!/^(19|20)\d\d$/.test(t)){
-  const r=el.getBoundingClientRect();if(r.top<innerHeight||!r.width)return;el.classList.add('fx-num');el.style.display='inline-block';el.style.minWidth=r.width+'px';el.dataset.fxn=t;cio.observe(el)}});
+  const r=el.getBoundingClientRect();if(r.top<innerHeight||!r.width)return;el.classList.add('fx-num');el.style.display='inline-block';el.style.minWidth=r.width+'px';el.dataset.fxn=t;FXR.add(el,x=>cioRun(x))}});
 d.querySelectorAll('img').forEach(img=>{const p=img.parentElement;if(p&&!img.closest('header,nav'))p.classList.add('fx-zoom')});
 /* parallax: rAF-throttled, transform only, stops after hero leaves */
 const hero=d.querySelector('.hero img, .hero__media, header.wrap img');if(hero){hero.classList.add('fx-par');let tick=0,lim=innerHeight*1.2;

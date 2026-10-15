@@ -1,16 +1,11 @@
-# Bildnachweise
-## Trading-Thumbnails (1_–6_*.png)
-Fotos von Wikimedia Commons, CC0/Public Domain (viele sind Unsplash-CC0-Importe):
--  Blur-chart-data-69760.jpg  ( CC0 ): https://commons.wikimedia.org/wiki/File:Blur-chart-data-69760.jpg 
--  Checking stock market prices (Unsplash).jpg  ( CC0 ): https://commons.wikimedia.org/wiki/File:Checking_stock_market_prices_(Unsplash).jpg 
--  Computer hacked eighth day event proposal.jpg  ( Public domain ): https://commons.wikimedia.org/wiki/File:Computer_hacked_eighth_day_event_proposal.jpg 
--  Alone by the lake at dusk (Unsplash).jpg  ( CC0 ): https://commons.wikimedia.org/wiki/File:Alone_by_the_lake_at_dusk_(Unsplash).jpg 
--  Code on computer monitor (Unsplash).jpg  ( CC0 ): https://commons.wikimedia.org/wiki/File:Code_on_computer_monitor_(Unsplash).jpg 
--  Darkness behind bars (Unsplash).jpg  ( CC0 ): https://commons.wikimedia.org/wiki/File:Darkness_behind_bars_(Unsplash).jpg 
-Charts, Pfeile, Texte und Grafiken: eigenes Werk. Die Zahlen sind fiktive Beispielwerte.
-## p_*.png
-Komplett per Code gezeichnet, eigenes Werk.
-## Schriften
-Oswald, Inter, Anton (SIL Open Font License); die Seite nutzt Systemschriften als Fallback.
-## roblox_*.png (Gaming & Roblox)
-Alles per Code (SVG/HTML) gezeichnet, eigene blockige Figuren; keine offiziellen Roblox-Logos oder -Assets. Schrift: Luckiest Guy (SIL OFL). "Roblox-style" beschreibt nur den Stil; keine Verbindung zu Roblox Corporation.
+# Image credits
+
+## roblox_obby.jpg / .webp · roblox_noob_vs_pro.jpg / .webp
+Tool-generated 3D scenes with **original blocky characters** (not official Roblox characters or logos). Text, arrows and composition added for thumbnail use.
+No affiliation with Roblox Corporation. "Roblox-style" describes the visual genre only.
+
+## Trading thumbnails (1_–6_*.jpg / .webp)
+Background photos from Wikimedia Commons (CC0 / Public Domain, many Unsplash-CC0 imports). Charts, arrows, overlays and text: own work. Numbers are fictional sample values.
+
+## Fonts on this site
+System fonts (Inter / Oswald fallbacks). Sample thumbnails may use Luckiest Guy / Oswald (SIL Open Font License).

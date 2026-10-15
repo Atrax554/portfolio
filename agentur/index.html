@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grok Web Agency – Portfolio &amp; Konzeptvorschauen</title>
+<meta name="description" content="Portfolio der Grok Web Agency: Designkonzepte für lokale Betriebe. Testpreise Starter 199 €, Business 349 €, Premium nach Aufwand. Add-ons Wartung, Google-Profil, Barrierefreiheit, Local-SEO.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#161412">
+<style>
+:root {
+  --bg:#161412; --elev:#1e1b18; --card:#26211c; --text:#ebe6df; --muted:#a89f93;
+  --amber:#c9943a; --teal:#5eb8b0; --line:rgba(235,230,223,.1); --font:system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:Georgia,"Times New Roman",serif; --max:1100px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;
+  background-image:radial-gradient(ellipse at 10% 0%,rgba(201,148,58,.07),transparent 45%),linear-gradient(180deg,#161412,#12100e);}
+a{color:var(--amber);text-underline-offset:.15em}
+a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.wrap{width:min(100% - 2rem,var(--max));margin-inline:auto}
+.banner{text-align:center;font-size:.8rem;color:var(--amber);background:#0e0d0b;border-bottom:1px solid var(--line);padding:.55rem 1rem}
+header{padding:2.5rem 0 1.5rem;border-bottom:1px solid var(--line)}
+.eyebrow{color:var(--amber);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;font-weight:600;margin:0 0 .6rem}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,4vw,2.6rem);margin:0 0 .75rem;line-height:1.15}
+h2{font-family:var(--serif);font-weight:400;font-size:1.7rem;margin:0 0 .5rem}
+.lead{color:var(--muted);max-width:42rem;margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;padding:2.5rem 0}
+@media(max-width:960px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 12px 36px rgba(0,0,0,.35);
+  transition:transform .25s ease,border-color .25s ease;opacity:0;transform:translateY(16px)}
+.card.is-in{opacity:1;transform:none}
+.card:hover{transform:translateY(-4px);border-color:rgba(201,148,58,.35)}
+.card.is-in:hover{transform:translateY(-4px)}
+.thumb{width:100%;aspect-ratio:16/10;background:var(--elev);display:grid;place-items:center;border-bottom:1px solid var(--line)}
+.thumb svg{width:70%;height:70%}.thumb{position:relative;overflow:hidden}.thumb img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.85) saturate(.9);transition:transform .4s ease}.card:hover .thumb img{transform:scale(1.04)}@media(prefers-reduced-motion:reduce){.card:hover .thumb img{transform:none}}
+.card__body{padding:1.25rem 1.35rem 1.5rem}
+.card h3{font-family:var(--serif);font-weight:400;font-size:1.35rem;margin:0 0 .4rem}
+.tag{display:inline-block;font-size:.72rem;color:var(--amber);border:1px solid rgba(201,148,58,.35);border-radius:999px;padding:.15rem .55rem;margin-bottom:.65rem}
+.card p{color:var(--muted);margin:0 0 1rem;font-size:.95rem}
+.btn{display:inline-flex;align-items:center;padding:.55rem 1rem;border-radius:999px;background:var(--amber);color:#1a140c;text-decoration:none;font-weight:600;font-size:.9rem}
+.btn:hover{filter:brightness(1.05)}
+.btn-ghost{background:transparent;border:1px solid var(--line);color:var(--text);margin-left:.4rem}
+.pricing,.addons{padding:0 0 2.5rem}
+.note{color:var(--muted);font-size:.9rem;margin:0 0 1.25rem}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.addon-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+@media(max-width:800px){.price-grid,.addon-grid{grid-template-columns:1fr}}
+.price,.addon{background:var(--elev);border:1px solid var(--line);border-radius:12px;padding:1.25rem;transition:border-color .25s ease}
+.price:hover,.addon:hover{border-color:rgba(201,148,58,.35)}
+.price strong,.addon strong{display:block;font-family:var(--serif);font-size:1.5rem;color:var(--amber);margin:.35rem 0}
+.price ul,.addon ul{margin:.75rem 0 0;padding-left:1.1rem;color:var(--muted);font-size:.9rem}
+.badge{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--amber)}
+.intro{font-size:.75rem;color:var(--teal);border:1px solid rgba(94,184,176,.35);border-radius:999px;padding:.1rem .5rem;margin-left:.35rem}
+footer{border-top:1px solid var(--line);padding:1.5rem 0 2rem;color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="banner" role="note">Grok Web Agency – Portfolio · Konzeptvorschauen, keine Live-Kundenauftritte ohne Freigabe</div>
+<header class="wrap">
+  <p class="eyebrow">Portfolio</p>
+  <h1>Websites, die lokal überzeugen</h1>
+  <p class="lead">Sechs ausgearbeitete Konzepte: Friseur, Tischlerei, Health-Blog, Café, Physiotherapie und KFZ-Werkstatt – matt, dunkel, animiert. Plus Pakete und Add-ons.</p>
+</header>
+
+<section class="wrap grid" aria-label="Konzeptbeispiele">
+  <article class="card">
+    <div class="thumb"><img src="img/salon-card.webp" width="480" height="300" alt="Vorschau: Friseursalon-Innenraum mit Stühlen und Spiegeln" loading="lazy" decoding="async"></div>
+    <div class="card__body">
+      <span class="tag">Fiktive Demo</span>
+      <h3>Salon Lindgrün</h3>
+      <p><strong>Nutzen:</strong> Friseursalon modern und mobilfreundlich – Termine, Leistungen, Vertrauen.</p>
+      <a class="btn" href="websites/demo-friseur/index.html">Demo öffnen</a>
+    </div>
+  </article>
+  <article class="card">
+    <div class="thumb"><img src="img/tischlerei-card.webp" width="480" height="300" alt="Vorschau: Holzwerkstatt mit Hobelbank und Handwerkzeugen" loading="lazy" decoding="async"></div>
+    <div class="card__body">
+      <span class="tag">Konzept · echter Betrieb (nicht offiziell)</span>
+      <h3>Tischlerei Norbert Raasch</h3>
+      <p><strong>Nutzen:</strong> Mehrseiter mit Leistungen, Standort und Demo-Kontakt – ohne erfundene Referenzen.</p>
+      <a class="btn" href="websites/tischlerei-raasch/index.html">Konzept öffnen</a>
+    </div>
+  </article>
+  <article class="card">
+    <div class="thumb"><img src="img/vitacheck-card.webp" width="480" height="300" alt="Vorschau: Titelbild der Gesundheits-Landingpage" loading="lazy" decoding="async"></div>
+    <div class="card__body">
+      <span class="tag">Fiktive Demo · Blog + Landing</span>
+      <h3>VitaCheck Selbsttest</h3>
+      <p><strong>Nutzen:</strong> Blog + Produkt-Landing – Content und Conversion ohne Fake-Bewertungen.</p>
+      <a class="btn" href="websites/demo-blog-landing/index.html">Demo öffnen</a>
+    </div>
+  </article>
+  <article class="card">
+    <div class="thumb"><img src="img/cafe-card.webp" width="480" height="300" alt="Vorschau: Warm beleuchtetes Café am Abend" loading="lazy" decoding="async"></div>
+    <div class="card__body">
+      <span class="tag">Konzept-Demo – fiktives Unternehmen</span>
+      <h3>Café Ember</h3>
+      <p><strong>Nutzen:</strong> Abendliches Café mit Stimmungsfotos, Speisekarte und Tisch-CTA.</p>
+      <a class="btn" href="websites/demo-cafe-ember/index.html">Demo öffnen</a>
+    </div>
+  </article>
+  <article class="card">
+    <div class="thumb"><img src="img/physio-card.webp" width="480" height="300" alt="Vorschau: Älterer Mann bei einer Dehnübung im Freien" loading="lazy" decoding="async"></div>
+    <div class="card__body">
+      <span class="tag">Konzept-Demo – fiktives Unternehmen</span>
+      <h3>Praxis BewegLicht</h3>
+      <p><strong>Nutzen:</strong> Physiotherapie-Landing: Leistungen, Zeiten, Termin – ruhig und vertrauenswürdig.</p>
+      <a class="btn" href="websites/demo-physio-beweglicht/index.html">Demo öffnen</a>
+    </div>
+  </article>
+  <article class="card">
+    <div class="thumb"><img src="img/kfz-card.webp" width="480" height="300" alt="Vorschau: Hand mit Werkzeug an einem Fahrzeug" loading="lazy" decoding="async"></div>
+    <div class="card__body">
+      <span class="tag">Konzept-Demo – fiktives Unternehmen</span>
+      <h3>Werkstatt Stahlfeder</h3>
+      <p><strong>Nutzen:</strong> KFZ-Werkstatt mit Inspektion, Reifen und klarer Anfrage – mit Werkstatt-Fotos.</p>
+      <a class="btn" href="websites/demo-kfz-stahlfeder/index.html">Demo öffnen</a>
+    </div>
+  </article>
+</section>
+
+<section class="wrap pricing" id="preise">
+  <h2>Preisideen</h2>
+  <p class="note"><strong>Testpreise</strong> – unverbindlich. Hosting und Domain sind <strong>nicht</strong> enthalten. Keine versteckten Abos.</p>
+  <div class="price-grid">
+    <div class="price">
+      <span class="badge">Starter</span>
+      <strong>199 €</strong>
+      <p style="margin:0;color:var(--muted);font-size:.9rem;">Einseiter oder kompakte Präsenz</p>
+      <ul>
+        <li>Responsive Layout</li>
+        <li>Kontakt &amp; Impressum-Vorlage</li>
+        <li>Basis-SEO-Metadaten</li>
+      </ul>
+    </div>
+    <div class="price">
+      <span class="badge">Business</span>
+      <strong>349 €</strong>
+      <p style="margin:0;color:var(--muted);font-size:.9rem;">Mehrseiter wie die Tischlerei-Vorschau</p>
+      <ul>
+        <li>3–6 Seiten</li>
+        <li>Leistungsübersicht</li>
+        <li>Formulardemo / CTA</li>
+      </ul>
+    </div>
+    <div class="price">
+      <span class="badge">Premium</span>
+      <strong>nach Aufwand</strong>
+      <p style="margin:0;color:var(--muted);font-size:.9rem;">Individuell, Erweiterungen · 35 €/h</p>
+      <ul>
+        <li>CMS / Buchung nach Bedarf</li>
+        <li>Inhaltspflege-Pakete</li>
+        <li>Angebot nach Briefing</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap addons" id="addons" aria-labelledby="addons-title">
+  <h2 id="addons-title">Add-ons <span class="intro">Einführungspreis</span></h2>
+  <p class="note">Zusatzleistungen – gekennzeichnet als <strong>Einführungspreis</strong>. Keine Rechtsberatung; BFSG-Check = technischer WCAG-Check.</p>
+  <div class="addon-grid">
+    <div class="addon">
+      <span class="badge">Wartung</span>
+      <strong>39 € / Monat</strong>
+      <p style="margin:0;color:var(--muted);font-size:.9rem;">Updates, Backup-Check, kleine Textänderungen · monatlich kündbar</p>
+    </div>
+    <div class="addon">
+      <span class="badge">Google-Unternehmensprofil</span>
+      <strong>79 €</strong>
+      <p style="margin:0;color:var(--muted);font-size:.9rem;">Einmalige Optimierung mit Ihrem Zugang · keine Fake-Reviews</p>
+    </div>
+    <div class="addon">
+      <span class="badge">Barrierefreiheits-Check</span>
+      <strong>149 €</strong>
+      <p style="margin:0;color:var(--muted);font-size:.9rem;">Technischer WCAG-Bericht (BFSG-Kontext ab 28.06.2025) · keine Rechtsgarantie</p>
+    </div>
+    <div class="addon">
+      <span class="badge">Local-SEO-Audit</span>
+      <strong>99 €</strong>
+      <p style="margin:0;color:var(--muted);font-size:.9rem;">Crawling, Metadaten, lokale Signale · ohne Ranking-Garantie</p>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <p>Grok Web Agency · Konzeptportfolio · Keine Kaltakquise über diese Seite · Preise als Test-/Einführungspreise gekennzeichnet · noindex</p>
+<p style="font-size:.8rem">Bildnachweise: siehe credits in den jeweiligen Demo-Ordnern (Unsplash-Lizenz bzw. CC0/CC BY).</p></footer>
+<script>
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const cards=document.querySelectorAll('.card');
+  if(reduce){cards.forEach(c=>c.classList.add('is-in'));return;}
+  const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('is-in');io.unobserve(x.target);}});},{threshold:.08});
+  cards.forEach(c=>io.observe(c));
+})();
+</script>
+</body>
+</html>

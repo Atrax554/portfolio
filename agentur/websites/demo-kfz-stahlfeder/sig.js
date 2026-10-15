@@ -3,10 +3,10 @@
 css.textContent=`.fx-gear{animation:fxRot 14s linear infinite;transform-box:fill-box;transform-origin:center}.fx-gear.r{animation-direction:reverse;animation-duration:9s}
 @keyframes fxRot{to{transform:rotate(360deg)}}.fx-pis{animation:fxPis 1.1s ease-in-out infinite alternate}@keyframes fxPis{to{transform:translateY(40px)}}
 h1,h2{background:linear-gradient(110deg,currentColor 40%,#fff 50%,currentColor 60%) 0 0/250% 100% no-repeat;-webkit-background-clip:text;background-clip:text}
-h1.sheen,h2.sheen{color:transparent;-webkit-text-fill-color:transparent;animation:fxSheen 3.5s ease-in-out infinite;background-image:linear-gradient(110deg,#d9d4cc 40%,#fff 50%,#d9d4cc 60%)}
-@keyframes fxSheen{0%{background-position:150% 0}60%,100%{background-position:-60% 0}}
+h1.sheen,h2.sheen{color:transparent;-webkit-text-fill-color:transparent;background-position:-60% 0;background-image:linear-gradient(110deg,#d9d4cc 40%,#fff 50%,#d9d4cc 60%)}
+h1.sheen.go,h2.sheen.go{animation:fxSheen 1.8s ease-in-out 1 both}@keyframes fxSheen{0%{background-position:150% 0}60%,100%{background-position:-60% 0}}
 .fx-tacho{position:absolute;right:3%;bottom:4%;width:150px;opacity:.85}`;
-d.querySelectorAll('h1,h2').forEach(h=>h.classList.add('sheen'));
+d.querySelectorAll('h1,h2').forEach(h=>{h.classList.add('sheen');F.seen(h,x=>x.classList.add('go'),.5)});
 const hero=d.querySelector('.hero');if(!hero)return;const sv=F.layer(hero,'svg');sv.setAttribute('viewBox','0 0 1000 600');sv.setAttribute('preserveAspectRatio','xMaxYMid slice');
 const gear=(cx,cy,r,t,cls)=>{let p='';for(let i=0;i<t*2;i++){const a=i*Math.PI/t,rr=i%2?r:r*1.14;p+=(i?'L':'M')+(cx+Math.cos(a)*rr).toFixed(1)+' '+(cy+Math.sin(a)*rr).toFixed(1)}
  return `<g class="fx-gear ${cls}"><path d="${p}Z" fill="none" stroke="rgba(201,148,58,.28)" stroke-width="3"/><circle cx="${cx}" cy="${cy}" r="${r*.35}" fill="none" stroke="rgba(201,148,58,.28)" stroke-width="3"/></g>`};
@@ -18,7 +18,7 @@ hero.append(t);F.seen(t,()=>{const t0=performance.now(),A=t.querySelector('#tA')
  const s=n=>{const p=Math.min(1,(n-t0)/1800),e=1-Math.pow(1-p,3)+(p<1?Math.sin(p*20)*.02:0),v=Math.min(1,e);A.style.strokeDashoffset=157*(1-v);N.style.transform=`rotate(${v*180}deg)`;T.textContent=Math.round(v*100);if(p<1)requestAnimationFrame(s)};requestAnimationFrame(s)},.5);
 /* sparks on hover */
 if(!F.fine)return;const cv=d.createElement('canvas');cv.className='fx-sig';cv.setAttribute('aria-hidden','true');cv.style.cssText='position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:240';d.body.append(cv);
-const c=cv.getContext('2d'),dpr=Math.min(2,devicePixelRatio);const sz=()=>{cv.width=innerWidth*dpr;cv.height=innerHeight*dpr;c.setTransform(dpr,0,0,dpr,0,0)};sz();addEventListener('resize',sz);
+const c=cv.getContext('2d'),dpr=1;const sz=()=>{cv.width=innerWidth*dpr;cv.height=innerHeight*dpr;c.setTransform(dpr,0,0,dpr,0,0)};sz();addEventListener('resize',sz);
 let P=[],raf=0;const run=()=>{c.clearRect(0,0,innerWidth,innerHeight);P=P.filter(p=>(p.l-=.03)>0);P.forEach(p=>{p.vy+=.25;p.x+=p.vx;p.y+=p.vy;c.strokeStyle=`rgba(255,${180+Math.random()*60|0},80,${p.l})`;c.lineWidth=1.5;c.beginPath();c.moveTo(p.x,p.y);c.lineTo(p.x-p.vx*2,p.y-p.vy*2);c.stroke()});raf=P.length?requestAnimationFrame(run):0};
-d.querySelectorAll('.btn, article, h2').forEach(el=>el.addEventListener('pointerenter',e=>{for(let i=0;i<22;i++)P.push({x:e.clientX,y:e.clientY,vx:(Math.random()-.5)*9,vy:-Math.random()*7,l:1});if(!raf)raf=requestAnimationFrame(run)}));
+d.querySelectorAll('.btn, article, h2').forEach(el=>el.addEventListener('pointerenter',e=>{if(F.low)return;for(let i=0;i<14;i++)P.push({x:e.clientX,y:e.clientY,vx:(Math.random()-.5)*9,vy:-Math.random()*7,l:1});if(!raf)raf=requestAnimationFrame(run)}));
 })();

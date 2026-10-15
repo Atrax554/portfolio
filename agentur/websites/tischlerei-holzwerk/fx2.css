@@ -1,0 +1,14 @@
+/* fx2.css – global bold layer */
+:root{--fx-accent:var(--accent,#c9a46a)}
+.fx-prog{position:fixed;left:0;top:0;height:3px;width:100%;z-index:200;transform-origin:0 50%;transform:scaleX(0);
+ background:linear-gradient(90deg,var(--fx-accent,#c9a46a),rgba(255,255,255,.8));pointer-events:none}
+.fx-veil{position:fixed;inset:0;z-index:300;background:#0d0d0f;pointer-events:none;transform:translateY(100%);transition:transform .45s cubic-bezier(.7,0,.2,1)}
+.fx-veil.cover{transform:none;pointer-events:auto}
+.fx-veil.leave{transform:translateY(-100%)}
+.fx-cur,.fx-ring{position:fixed;left:0;top:0;z-index:250;pointer-events:none;border-radius:50%;will-change:transform}
+.fx-cur{width:6px;height:6px;margin:-3px 0 0 -3px;background:var(--fx-accent,#c9a46a)}
+.fx-ring{width:34px;height:34px;margin:-17px 0 0 -17px;border:1px solid rgba(255,255,255,.45);transition:width .25s,height .25s,margin .25s,border-color .25s}
+.fx-ring.hot{width:58px;height:58px;margin:-29px 0 0 -29px;border-color:var(--fx-accent,#c9a46a)}
+.fx-layer{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1}
+.fx-host{position:relative;isolation:isolate}
+@media (prefers-reduced-motion:reduce){.fx-prog,.fx-veil,.fx-cur,.fx-ring,.fx-layer,.fx-sig{display:none!important}}

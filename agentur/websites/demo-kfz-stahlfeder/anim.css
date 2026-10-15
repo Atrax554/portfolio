@@ -1,5 +1,5 @@
 /* anim.css – shared motion layer (transform/opacity/clip-path only) */
-.fx-bg{position:fixed;inset:-20%;z-index:-1;pointer-events:none;opacity:.55;
+.fx-bg{position:fixed;top:-20vh;left:-20vw;width:140vw;height:140vh;contain:strict;z-index:-1;pointer-events:none;opacity:.55;
  background:radial-gradient(40% 35% at 20% 25%,rgba(150,170,255,.10),transparent 70%),
  radial-gradient(35% 30% at 80% 70%,rgba(255,170,120,.08),transparent 70%);
  animation:fxDrift 26s ease-in-out infinite alternate;will-change:transform}

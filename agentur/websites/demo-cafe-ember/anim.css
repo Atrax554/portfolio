@@ -1,0 +1,43 @@
+/* anim.css – shared motion layer (transform/opacity/clip-path only) */
+.fx-bg{position:fixed;inset:-20%;z-index:-1;pointer-events:none;opacity:.55;
+ background:radial-gradient(40% 35% at 20% 25%,rgba(150,170,255,.10),transparent 70%),
+ radial-gradient(35% 30% at 80% 70%,rgba(255,170,120,.08),transparent 70%);
+ animation:fxDrift 26s ease-in-out infinite alternate;will-change:transform}
+.fx-noise{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.06;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+@keyframes fxDrift{0%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(4%,-3%,0) rotate(6deg)}100%{transform:translate3d(-3%,4%,0) rotate(-4deg)}}
+.fx-glow{position:fixed;left:0;top:0;width:420px;height:420px;margin:-210px 0 0 -210px;border-radius:50%;
+ pointer-events:none;z-index:60;background:radial-gradient(circle,rgba(255,255,255,.07),transparent 65%);
+ opacity:0;transition:opacity .4s;will-change:transform}
+.fx-glow.on{opacity:1}
+.fx-w{display:inline-block;opacity:0;transform:translateY(.6em) rotate(3deg);
+ animation:fxWord .7s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i)*55ms + 80ms)}
+@keyframes fxWord{to{opacity:1;transform:none}}
+[data-fx]{transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1),clip-path .9s cubic-bezier(.7,0,.2,1);transition-delay:var(--fxd,0ms)}
+[data-fx="up"]{opacity:0;transform:translateY(34px)}
+[data-fx="left"]{opacity:0;transform:translateX(-44px)}
+[data-fx="right"]{opacity:0;transform:translateX(44px)}
+[data-fx="scale"]{opacity:0;transform:scale(.92)}
+[data-fx="wipe"]{clip-path:inset(0 100% 0 0)}
+[data-fx].fx-in{opacity:1;transform:none;clip-path:inset(0 0 0 0)}
+.fx-zoom{overflow:hidden}
+.fx-zoom img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.fx-zoom:hover img{transform:scale(1.07)}
+.fx-tilt{transition:transform .25s ease-out;transform-style:preserve-3d;will-change:transform}
+.fx-mag{transition:transform .25s ease-out}
+.fx-par{will-change:transform}
+nav a{position:relative}
+nav a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:currentColor;opacity:.7;
+ transform:scaleX(0);transform-origin:right;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+nav a:not(.btn):hover::after,nav a:not(.btn):focus-visible::after,nav a[aria-current]::after{transform:scaleX(1);transform-origin:left}
+.fx-ticker{overflow:hidden;border-block:1px solid rgba(255,255,255,.08);padding:14px 0;font-size:.95rem;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+.fx-track{display:flex;gap:3rem;width:max-content;animation:fxMarq 32s linear infinite}
+.fx-track span::before{content:"✦";margin-right:3rem;opacity:.5}
+@keyframes fxMarq{to{transform:translateX(-50%)}}
+.fx-ticker:hover .fx-track{animation-play-state:paused}
+.fx-num{font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:reduce){
+ .fx-bg,.fx-glow,.fx-track{animation:none!important}.fx-glow{display:none}
+ .fx-w,[data-fx]{opacity:1!important;transform:none!important;clip-path:none!important;animation:none!important;transition:none!important}
+ .fx-zoom img,.fx-tilt,.fx-mag,nav a::after{transition:none!important}.fx-zoom:hover img{transform:none}
+}

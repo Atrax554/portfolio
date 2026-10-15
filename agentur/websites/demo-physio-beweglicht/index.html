@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script>document.documentElement.classList.add("js");</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Praxis BewegLicht – Designkonzept | Grok Web Agency</title>
+<meta name="description" content="Physiotherapie-Praxis mit Fokus auf Bewegung, Ruhe und klare Terminwege. Unverbindliches Designkonzept eines fiktiven Unternehmens.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#161412">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalBusiness","name":"Praxis BewegLicht (fiktiv)","description":"Physiotherapie-Praxis mit Fokus auf Bewegung, Ruhe und klare Terminwege."}</script>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<div class="concept-banner" role="note">Konzept-Demo – fiktives Unternehmen · unverbindlich · keine offizielle Unternehmenswebsite</div>
+<header class="site-header">
+  <div class="wrap nav-wrap">
+    <a class="logo" href="#top">Praxis <span>BewegLicht</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menü</button>
+    <nav id="nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#ueber">Über uns</a></li>
+        <li><a href="#zeiten">Zeiten</a></li>
+        <li><a class="btn" href="#kontakt" style="padding:.45rem 1rem;font-size:.9rem">Termin anfragen</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow hero-anim" style="--d:0">Physiotherapie in Musterstadt</p>
+      <h1 id="hero-title" class="hero-anim" style="--d:1">Bewegung zurückgewinnen – Schritt für Schritt.</h1>
+      <p class="lead hero-anim" style="--d:2">Konzept-Landingpage für eine fiktive Praxis: Leistungen, Zeiten und Termin-CTA, barrierearm und mobilfreundlich.</p>
+      <div class="cta-row hero-anim" style="--d:3">
+        <a class="btn" href="#kontakt">Termin anfragen</a>
+        <a class="btn btn-ghost" href="#leistungen">Leistungen ansehen</a>
+      </div>
+    </div>
+    <div class="hero-art hero-anim" style="--d:2"><img src="assets/img/hero.webp" width="800" height="800" alt="Älterer Mann macht im Freien eine Dehnübung für die Arme" fetchpriority="high" decoding="async"></div>
+  </div>
+</section>
+<section id="leistungen" class="section reveal" aria-labelledby="leist-title">
+  <div class="wrap">
+    <h2 id="leist-title">Leistungen</h2>
+    <p class="section-lead">Beispielpreise im Konzept – im echten Projekt mit dem Betrieb abgestimmt.</p>
+    <div class="grid-3"><article class="card reveal reveal-child" style="--i:0"><img class="card-img" src="assets/img/mat.webp" width="640" height="400" alt="Therapeut begleitet einen älteren Mann bei einer Übung im Ausfallschritt" loading="lazy" decoding="async"><h3>Erstbefund</h3><p>Anamnese und Therapieplan – Konzept.</p><span class="price">ab 55 €</span></article><article class="card reveal reveal-child" style="--i:1"><img class="card-img" src="assets/img/weights2.webp" width="640" height="400" alt="Zwei Paar leichte Kurzhanteln auf einem Holzboden" loading="lazy" decoding="async"><h3>Krankengymnastik</h3><p>Einzeltherapie nach Verordnung/Selbstzahler.</p><span class="price">ab 32 €</span></article><article class="card reveal reveal-child" style="--i:2"><img class="card-img" src="assets/img/spa.webp" width="640" height="400" alt="Massagesteine, Handtuch und Blüten auf grauem Untergrund" loading="lazy" decoding="async"><h3>Manuelle Therapie</h3><p>Gezielte Mobilisation – Beispielpreis.</p><span class="price">ab 38 €</span></article></div>
+  </div>
+</section>
+<section id="ueber" class="section alt reveal" aria-labelledby="ueber-title">
+  <div class="wrap split">
+    <div>
+      <h2 id="ueber-title">Über uns</h2>
+      <p>Praxis BewegLicht zeigt, wie eine Physio-Praxis digital ruhig und vertrauenswürdig wirken kann – ohne echte Patientendaten und ohne Stockfotos.</p>
+      <ul class="facts"><li>Fiktiver Musterbetrieb</li><li>Barrierearmer Zugang (Konzept)</li><li>Kartenzahlung möglich</li></ul>
+      <p class="hint">Konzept-Hinweis: Texte und Preise sind Beispielinhalte. Keine echten Kundenstimmen.</p>
+    </div>
+    <div id="zeiten">
+      <h2>Öffnungszeiten</h2>
+      <div class="hours">
+        <div><span>Mo–Fr</span><span>09:00–18:00</span></div>
+        <div><span>Samstag</span><span>10:00–14:00</span></div>
+        <div><span>Sonntag</span><span>geschlossen</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="kontakt" class="section reveal" aria-labelledby="kontakt-title">
+  <div class="wrap" style="max-width:640px">
+    <h2 id="kontakt-title">Kontakt</h2>
+    <p class="section-lead">Demo-Formular – es werden keine Daten gespeichert oder gesendet.</p>
+    <form id="contact-form" novalidate>
+      <label>Name<input id="name" name="name" autocomplete="name" required><span class="err" id="name-err"></span></label>
+      <label>E-Mail<input id="email" name="email" type="email" autocomplete="email" required><span class="err" id="email-err"></span></label>
+      <label>Nachricht<textarea id="msg" name="msg" rows="4" required></textarea><span class="err" id="msg-err"></span></label>
+      <label class="check"><input id="consent" type="checkbox" required><span>Ich habe die Demo-Hinweise gelesen. (Konzept, keine echte Anfrage.)</span></label>
+      <span class="err" id="consent-err"></span>
+      <button class="btn" type="submit">Nachricht senden (Demo)</button>
+      <p id="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+<footer class="wrap">
+  <p>Praxis BewegLicht · Konzept-Demo – fiktives Unternehmen · Grok Web Agency · noindex</p>
+  <p class="credits">Bildnachweise: Direct Media (StockSnap, CC0); Direct Media (StockSnap, CC0); Matt Bango (StockSnap, CC0); Healthy Living (StockSnap, CC0) · <a href="assets/img/credits.txt">Details</a></p>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

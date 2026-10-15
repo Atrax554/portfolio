@@ -12,3 +12,5 @@ Charts, Pfeile, Texte und Grafiken: eigenes Werk. Die Zahlen sind fiktive Beispi
 Komplett per Code gezeichnet, eigenes Werk.
 ## Schriften
 Oswald, Inter, Anton (SIL Open Font License); die Seite nutzt Systemschriften als Fallback.
+## roblox_*.png (Gaming & Roblox)
+Alles per Code (SVG/HTML) gezeichnet, eigene blockige Figuren; keine offiziellen Roblox-Logos oder -Assets. Schrift: Luckiest Guy (SIL OFL). "Roblox-style" beschreibt nur den Stil; keine Verbindung zu Roblox Corporation.

@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Stanley – Thumbnail Designer</title><meta name="description" content="High-contrast YouTube thumbnails for trading, finance, tech and gaming channels.">
+<title>Stanley – Thumbnail Designer</title><meta name="description" content="High-contrast YouTube thumbnails for Roblox &amp; gaming, trading, finance and tech channels.">
 <style>
 :root{--bg:#0a0b0f;--card:#14161d;--t:#f2f4f8;--m:#8a93a6;--g:#33ff66;--r:#ff2b3b}*{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--t);font:17px/1.6 Inter,system-ui,sans-serif}
@@ -24,8 +24,8 @@ footer{text-align:center;color:var(--m);font-size:14px;padding:30px 5vw;border-t
 </style></head><body>
 <nav><b>STANLEY<span>.</span></b><div><a href="#work">Work</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></div></nav>
 <header class="hero"><h1>Thumbnails that<br><em>get clicked</em></h1>
-<p>Hi, I'm Stanley, a thumbnail designer from Germany. I make bold, high-contrast YouTube thumbnails for trading, finance, tech and gaming channels.</p>
-<div class="tags"><span>Trading &amp; Finance</span><span>Tech</span><span>Gaming</span><span>Before / After</span></div>
+<p>Hi, I'm Stanley, a thumbnail designer from Germany. I make bold, high-contrast YouTube thumbnails for Roblox &amp; gaming, trading, finance and tech channels.</p>
+<div class="tags"><span>Gaming &amp; Roblox</span><span>Trading &amp; Finance</span><span>Tech</span><span>Gaming</span><span>Before / After</span></div>
 <a class="btn" href="#work">See my work</a></header>
 <section id="work"><h2>Portfolio</h2><div class="grid" id="grid"></div></section>
 <section id="pricing"><h2>Services</h2><div class="svc"><div><b>$25</b><span>per thumbnail</span></div><div><b>24–48h</b><span>delivery</span></div><div><b>1</b><span>revision included</span></div></div></section>
@@ -33,7 +33,7 @@ footer{text-align:center;color:var(--m);font-size:14px;padding:30px 5vw;border-t
 <footer>© 2026 Stanley – Thumbnail Designer · Germany · Sample work with fictional numbers · <a href="LICENSES.md">Image credits</a></footer>
 <div id="lb" role="dialog" aria-modal="true"><button class="x" aria-label="Close">×</button><img alt=""></div>
 <script>
-const imgs=[['1_minus5000','Trading: -5.000€ in one night'],['2_plus2487','Trading: +2.487€ in one day'],['3_100_to_10000','100€ → 10.000€ challenge'],['4_vorher_nachher','Before / after account balance'],['5_24h_traden','24h trading'],['6_meine_strategie','My strategy'],['p_1_gaming','Gaming: 1v5 clutch'],['p_2_tech','Tech review: worth it?'],['p_4_finance','Finance: €100 into €10K?']];
+const imgs=[['roblox_1','Roblox-style: Obby 999 levels'],['roblox_2','Roblox-style: Noob vs Pro'],['roblox_3','Roblox-style: 1 HP escape'],['1_minus5000','Trading: -5.000€ in one night'],['2_plus2487','Trading: +2.487€ in one day'],['3_100_to_10000','100€ → 10.000€ challenge'],['4_vorher_nachher','Before / after account balance'],['5_24h_traden','24h trading'],['6_meine_strategie','My strategy'],['p_1_gaming','Gaming: 1v5 clutch'],['p_2_tech','Tech review: worth it?'],['p_4_finance','Finance: €100 into €10K?']];
 const g=document.getElementById('grid'),lb=document.getElementById('lb'),li=lb.querySelector('img');
 imgs.forEach(([f,a])=>{const b=document.createElement('button');b.setAttribute('aria-label','Open: '+a);b.innerHTML=`<img src="images/${f}.png" alt="${a}" loading="lazy" width="1280" height="720">`;b.onclick=()=>{li.src=`images/${f}.png`;li.alt=a;lb.classList.add('on')};g.appendChild(b)});
 lb.onclick=()=>lb.classList.remove('on');document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});

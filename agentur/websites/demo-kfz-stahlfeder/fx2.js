@@ -15,7 +15,8 @@ const FX=window.FX={rm,fine,mobile,low:false,onLow:[],
   FX.job(cv,t=>{ctx.clearRect(0,0,w,h);draw(ctx,w,h,(t-t0)/1000)})},
  layer(host,tag='canvas'){host.classList.add('fx-host');const el=tag==='canvas'?d.createElement('canvas'):d.createElementNS('http://www.w3.org/2000/svg','svg');
   el.setAttribute('class','fx-layer');el.setAttribute('aria-hidden','true');host.prepend(el);return el},
- seen(el,cb,th=.25){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){io.unobserve(e.target);cb(e.target)}}),{threshold:th});io.observe(el)},
+ /* fail-safe: shared FXR registry (IO threshold 0 + rect poll), threshold arg ignored on purpose */
+ seen(el,cb){if(window.FXR)FXR.add(el,cb);else cb(el)},
  /* scroll: one passive listener, callbacks run once per frame */
  scroll(cb){FX._sc.push(cb);cb(scrollY)},_sc:[],
  scramble(el){if(el.dataset.fxs)return;el.dataset.fxs=1;const txt=el.textContent,ch='▚▞#*/\\<>_=+',n=txt.length,t0=performance.now();
